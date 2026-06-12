@@ -18,6 +18,9 @@ dotenv.config();
 
 const app = express();
 
+// Fix Express Rate Limit proxy warning
+app.set('trust proxy', 1);
+
 // Security middleware
 app.use(helmet());
 app.use(cors({
