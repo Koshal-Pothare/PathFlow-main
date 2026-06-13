@@ -97,8 +97,8 @@ const Dashboard = () => {
           { goal: 'Backend Developer', count: 3 },
           { goal: 'Mobile Developer', count: 2 },
           { goal: 'DevOps Engineer', count: 2 }
-        ],
-        message: '⚠️ Demo Mode: Unable to connect to backend server. Make sure to run "npm run dev" to see live data.'
+        ]
+      
       });
     } finally {
       setLoading(false);

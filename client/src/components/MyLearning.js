@@ -40,7 +40,7 @@ const MyLearning = () => {
         return;
       }
 
-      const response = await axios.get('/api/paths/my-paths', {
+      const response = await axios.get('http://localhost:5000/api/paths/my-paths', {
         headers: { Authorization: `Bearer ${token}` }
       });
 

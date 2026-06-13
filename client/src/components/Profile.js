@@ -14,7 +14,7 @@ const Profile = () => {
 
   const fetchProfile = async () => {
     try {
-      const token = localStorage.getItem('token');
+      const token = localStorage.getItem('authToken');
 
       if (!token) {
         setMessage({ type: 'error', text: 'Please log in to view your profile' });
@@ -23,17 +23,19 @@ const Profile = () => {
       }
 
       const response = await axios.get(
-        `${process.env.REACT_APP_API_URL || ''}/api/user/profile`,
+        `${process.env.REACT_APP_API_URL || ''}http://localhost:5000/api/user/profile`,
         {
           headers: { Authorization: `Bearer ${token}` }
         }
       );
+      console.log("PROFILE RESPONSE:", response.data);
       setProfile(response.data);
       setFormData({
         name: response.data.user.name,
         email: response.data.user.email
       });
       setLoading(false);
+      
     } catch (error) {
       console.error('Error fetching profile:', error);
 

@@ -656,7 +656,7 @@ const SignIn = () => {
         </form>
 
         {/* Demo Credentials Toggle */}
-        {isLogin && (
+        {/* {isLogin && (
           <>
             <div style={{ textAlign: "center", marginBottom: "1rem" }}>
               <button
@@ -673,10 +673,10 @@ const SignIn = () => {
               >
                 {showCredentials ? "Hide" : "Show"} Demo Credentials
               </button>
-            </div>
+            </div> */}
 
             {/* Demo Credentials */}
-            {showCredentials && (
+            {/* {showCredentials && (
               <div style={{
                 backgroundColor: "rgba(60,26,107, 0.2)",
                 padding: "1.5rem",
@@ -749,7 +749,7 @@ const SignIn = () => {
               </div>
             )}
           </>
-        )}
+        )} */}
 
         {/* Footer */}
         <div style={{
@@ -765,7 +765,7 @@ const SignIn = () => {
       </div>
     </div>
   );
-};
+}; 
 
 // Navigation Component (Updated with logout)
 const Navigation = () => {
