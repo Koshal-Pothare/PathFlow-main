@@ -310,7 +310,7 @@ app.get("/health", async (req, res) => {
 app.post("/generate-path", aiLimiter, optionalAuthMiddleware, validateLearningPathInput, async (req, res) => {
   const { skills, goal } = req.body;
   const startTime = Date.now();
-  
+  console.log("REQ USER:", req.user);
   try {
     let generatedSteps = null;
     let aiProvider = 'fallback';

@@ -1687,11 +1687,15 @@ function GeneratePathForm() {
     setShowRoadmap(false); // Reset view when generating new path
 
     try {
+    
+      const token = authService.getToken();
+
       const response = await fetch(`${apiUrl}/generate-path`, {
         method: "POST",
         headers: { 
           "Content-Type": "application/json",
-          "Accept": "application/json"
+          "Accept": "application/json",
+          "Authorization": `Bearer ${token}`
         },
         body: JSON.stringify({ 
           skills: skills.trim(), 

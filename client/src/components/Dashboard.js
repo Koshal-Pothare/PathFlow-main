@@ -21,7 +21,7 @@ const Dashboard = () => {
       console.log('Testing server connectivity...');
       
       // Fetch general stats with timeout and better error handling
-      const statsResponse = await axios.get('/api/dashboard/stats', {
+      const statsResponse = await axios.get('http://localhost:5000/api/dashboard/stats', {
         timeout: 10000, // 10 second timeout
         headers: {
           'Content-Type': 'application/json',
@@ -35,7 +35,7 @@ const Dashboard = () => {
       const token = authService.getToken();
       if (token) {
         try {
-          const userPathsResponse = await axios.get('/api/dashboard/my-paths', {
+          const userPathsResponse = await axios.get('http://localhost:5000/api/dashboard/my-paths', {
             headers: { 
               Authorization: `Bearer ${token}`,
               'Content-Type': 'application/json',
